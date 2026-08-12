@@ -1,15 +1,20 @@
+import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from src.state import AgentState
 from src.tools.google_places import buscar_negocios_locais
 from src.tools.web_search import buscar_informacoes_web
+from dotenv import load_dotenv
+
+load_dotenv()
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
+    model="gemini-2.5-flash",
     temperature=0.2,
     max_tokens=None,
     timeout=None,
     max_retries=2,
+    google_api_key=os.getenv("AI_API_KEY")
 )
 
 llm_com_maps = llm.bind_tools([buscar_negocios_locais])
