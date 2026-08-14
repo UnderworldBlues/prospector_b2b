@@ -5,6 +5,7 @@ from src.state import AgentState
 from src.tools.google_places import buscar_negocios_locais
 from src.tools.web_search import buscar_informacoes_web
 from dotenv import load_dotenv
+#import time
 
 load_dotenv()
 
@@ -68,6 +69,8 @@ def auditor_node(state: AgentState):
         cidade = state["localizacao"]
         
         print(f"[Auditor] Pesquisando: {nome}...")
+
+        #time.sleep(12)
 
         resposta_pesquisa = chain.invoke({
             "nome_negocio": nome,

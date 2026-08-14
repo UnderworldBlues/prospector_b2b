@@ -18,8 +18,8 @@ def formatar_relatorio_final(resultado_final: dict):
 def main():
     print("Iniciando busca...\n")
     inputs_iniciais = {
-        "termo_busca": "agência de marketing",
-        "localizacao": "Uberlândia, MG"
+        "termo_busca": "restaurante",
+        "localizacao": "xique xique, bahia"
     }
     print(f"Buscando por: {inputs_iniciais['termo_busca']} em {inputs_iniciais['localizacao']}\n")
     
